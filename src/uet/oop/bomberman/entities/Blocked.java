@@ -1,0 +1,53 @@
+package uet.oop.bomberman.entities;
+
+import static uet.oop.bomberman.BombermanGame.*;
+
+public class Blocked {
+    public static boolean blockDown(Entity entity){
+        return check[entity.getX()/32][entity.getY()/32+1] == 0;
+    }
+
+    public static boolean blockUp(Entity entity){
+        return check[entity.getX()/32][entity.getY()/32-1] == 0;
+    }
+
+    public static boolean blockLeft(Entity entity){
+        return check[entity.getX()/32-1][entity.getY()/32] == 0;
+    }
+
+    public static boolean blockRight(Entity entity){
+        return check[entity.getX()/32+1][entity.getY()/32] == 0;
+    }
+
+    public static boolean blockBombDown(Entity entity, int power){
+        return check[entity.getX() / 32][entity.getY() / 32 + 1 + power] == 0
+                || check[entity.getX() / 32][entity.getY() / 32 + 1 + power] == 3
+                || check[entity.getX() / 32][entity.getY() / 32 + 1 + power] == 6
+                || check[entity.getX() / 32][entity.getY() / 32 + 1 + power] == 7
+                || check[entity.getX() / 32][entity.getY() / 32 + 1 + power] == 8;
+    }
+
+    public static boolean blockBombUp(Entity entity, int power){
+        return check[entity.getX() / 32][entity.getY() / 32 - 1 - power] == 0
+                || check[entity.getX() / 32][entity.getY() / 32 - 1 - power] == 3
+                || check[entity.getX() / 32][entity.getY() / 32 - 1 - power] == 6
+                || check[entity.getX() / 32][entity.getY() / 32 - 1 - power] == 7
+                || check[entity.getX() / 32][entity.getY() / 32 - 1 - power] == 8;
+    }
+
+    public static boolean blockBombLeft(Entity entity, int power){
+        return check[entity.getX() / 32 - 1 - power][entity.getY() / 32] == 0
+                || check[entity.getX() / 32 - 1 - power][entity.getY() / 32] == 3
+                || check[entity.getX() / 32 - 1 - power][entity.getY() / 32] == 6
+                || check[entity.getX() / 32 - 1 - power][entity.getY() / 32] == 7
+                || check[entity.getX() / 32 - 1 - power][entity.getY() / 32] == 8;
+    }
+
+    public static boolean blockBombRight(Entity entity, int power){
+        return check[entity.getX() / 32 + 1 + power][entity.getY() / 32] == 0
+                || check[entity.getX() / 32 + 1 + power][entity.getY() / 32] == 3
+                || check[entity.getX() / 32 + 1 + power][entity.getY() / 32] == 6
+                || check[entity.getX() / 32 + 1 + power][entity.getY() / 32] == 7
+                || check[entity.getX() / 32 + 1 + power][entity.getY() / 32] == 8;
+    }
+}
