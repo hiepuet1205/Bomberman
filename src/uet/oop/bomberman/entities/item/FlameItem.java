@@ -8,12 +8,14 @@ import uet.oop.bomberman.graphics.Sprite;
 import static uet.oop.bomberman.BombermanGame.*;
 
 public class FlameItem extends Items{
+    // khoi tao
     public FlameItem(int xUnit, int yUnit, Image img, boolean received) {
         super(xUnit, yUnit, img, received);
     }
 
     @Override
     public void update(){
+        // dat hinh anh cho item flame
         for(Entity entity : block){
             if(entity instanceof FlameItem && !this.received){
                 if(listKill[entity.getX()/32][entity.getY()/32] == 4){
@@ -22,6 +24,8 @@ public class FlameItem extends Items{
             }
         }
 
+        // xu ly khi nhat item speed
+        // dat lai hinh anh
         if(!this.received){
             if(player.getX() == this.getX() && player.getY() == this.getY()){
                 this.received = true;

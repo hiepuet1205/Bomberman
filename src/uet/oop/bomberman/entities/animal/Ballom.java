@@ -11,20 +11,24 @@ import static uet.oop.bomberman.entities.Move.*;
 
 public class Ballom extends Animal{
     private static int animationDead = 1;
-    private static int countKill = 0;
+//    public static int countKill = 0;
 
+    // khoi tao
     public Ballom(int ismove, int swap, String direction, int count, int countToRun) {
         super(4, 1, "up", 0, 0);
     }
 
+    // khoi tao
     public Ballom() {
     }
 
+    // khoi tao
     public Ballom(int x, int y, Image img) {
         super(x, y, img);
     }
 
 
+    // hoat canh ballom chet
     public static void animationBallomDead(Animal animal){
         if(animationDead == 0){
             animal.setImg(Sprite.mob_dead1.getFxImage());
@@ -37,11 +41,12 @@ public class Ballom extends Animal{
             animationDead = 3;
         }else{
             animal.setLive(false);
-            enemy.remove(animal);
+            enemy.remove(animal); // danh sach quai vat loai bo animal
             animationDead = 1;
         }
     }
 
+    // check xem chet chua
     public static void checkDead(){
         for(Animal animal: enemy){
             if(listKill[animal.getX()/32][animal.getY()/32] == 4){
@@ -50,6 +55,7 @@ public class Ballom extends Animal{
         }
     }
 
+    // ham di chuyen ngau nhien
     public void randomMove(){
         if (this.y % 16 == 0 && this.x % 16 == 0){
             Random random = new Random();
@@ -75,8 +81,9 @@ public class Ballom extends Animal{
     @Override
     public void update() {
         checkDead();
-        countKill++;
+//        countKill++;
 
+        // check xem co con nao chet ko chet thi goi ham animationBallomDead
         for(Animal animal: enemy){
             if(!animal.isLiVe() && animal instanceof Ballom){
                 animationBallomDead(animal);

@@ -12,29 +12,31 @@ import uet.oop.bomberman.entities.level.level1;
 
 import static uet.oop.bomberman.BombermanGame.*;
 
+// menu game
 public class Menu {
-    private static ImageView statusGame;
-    public static Text level, bomb, time;
-    public static int bombNumber = 20, timeNumber = 120;
+    private static ImageView statusGame; // hinh anh trang thai tro choi
+    public static Text level, bomb, time; // cac doan text hien thi thong tin
+    public static int bombNumber = 20, timeNumber = 120; // so bomb va time con lai
 
+    // tao menu
     public static void createMenu(Group root) {
-        level = new Text("Level: 1");
+        level = new Text("Level: 1");// bat dau voi level 1
         level.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         level.setFill(Color.WHITE);
         level.setX(416);
         level.setY(20);
-        bomb = new Text("Bombs: 20");
+        bomb = new Text("Bombs: 20");// bat dau voi 20 bomb
         bomb.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         bomb.setFill(Color.WHITE);
         bomb.setX(512);
         bomb.setY(20);
-        time = new Text("Times: 120");
+        time = new Text("Times: 120");// bat dau voi 120s
         time.setFont(Font.font("Arial", FontWeight.BOLD, 14));
         time.setFill(Color.WHITE);
         time.setX(608);
         time.setY(20);
 
-        Image newGame = new Image("images/newGame.png");
+        Image newGame = new Image("images/newGame.png"); // nut newgame
         statusGame = new ImageView(newGame);
         statusGame.setX(-75);
         statusGame.setY(-10);

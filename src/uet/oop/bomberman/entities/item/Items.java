@@ -4,8 +4,9 @@ import javafx.scene.image.Image;
 import uet.oop.bomberman.entities.Entity;
 
 public abstract class Items extends Entity {
-    protected boolean received = false;
+    protected boolean received = false; // check xem da dc nhat chua
 
+    // khoi tao
     public Items( int xUnit, int yUnit, Image img, boolean received) {
         super(xUnit, yUnit, img);
         this.received = received;

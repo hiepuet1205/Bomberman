@@ -32,21 +32,21 @@ public class BombermanGame extends Application {
     public static int w = 0;
     public static int h = 0;
     public static int l = 1;
-    public static boolean running;
+    public static boolean running;// trang thai tro choi
 
-    public static final List<Entity> block = new ArrayList<>();
-    public static List<Animal> enemy = new ArrayList<>();
-    public static int[][] listKill;
-    public static int[][] check;
-    public static Animal player;
+    public static final List<Entity> block = new ArrayList<>(); // danh sach cac khoi
+    public static List<Animal> enemy = new ArrayList<>(); // danh sach quai
+    public static int[][] listKill; // danh sach cho di vao la chet
+    public static int[][] check;// id cua cac thanh phan
+    public static Animal player; // nguoi choi
     
     private GraphicsContext gc;
     private Canvas canvas;
 
 
-    public static ImageView authorView;
+    public static ImageView authorView;// hinh anh game
 
-    private int frame = 1;
+//    private int frame = 1;
     private long lastTime;
 
     public static Stage mainStage = null;
@@ -174,13 +174,13 @@ public class BombermanGame extends Application {
     }
 
     public void time() {
-        frame++;
+//        frame++;
 
         long now = System.currentTimeMillis();
         if (now - lastTime > 1000) {
             lastTime = System.currentTimeMillis();
-            mainStage.setTitle("Bomberman | " + frame + " frame");
-            frame = 0;
+            mainStage.setTitle("Bomberman ");
+//            frame = 0;
 
             time.setText("Time: " + timeNumber);
             timeNumber--;

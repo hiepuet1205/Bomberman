@@ -17,6 +17,8 @@ import java.util.StringTokenizer;
 import static uet.oop.bomberman.BombermanGame.*;
 
 public class Map {
+
+    // tao map
     public static void createMap(String path) {
         System.out.println(System.getProperty("user.dir"));
         final File fileName = new File(path);
@@ -40,23 +42,23 @@ public class Map {
                         int s = Integer.parseInt(tokenTile.nextToken());
                         Entity entity;
                         switch (s) {
-                            case 1:
+                            case 1:// 1 => portal
                                 entity = new Portal(j, i, Sprite.grass.getFxImage());
                                 s = 0;
                                 break;
-                            case 2:
+                            case 2: // 2 => wall
                                 entity = new Wall(j, i, Sprite.wall.getFxImage());
                                 break;
-                            case 3:
+                            case 3: // 3=> brick
                                 entity = new Brick(j, i, Sprite.brick.getFxImage());
                                 break;
-                            case 6:
+                            case 6: // 6 => SpeedItem
                                 entity = new SpeedItem(j, i, Sprite.brick.getFxImage(), false);
                                 break;
-                            case 7:
+                            case 7: // 7 => FlameItem
                                 entity = new FlameItem(j, i, Sprite.brick.getFxImage(), false);
                                 break;
-                            default:
+                            default: // con lai la co
                                 entity = new Grass(j, i, Sprite.grass.getFxImage());
                         }
                         check[j][i] = s;

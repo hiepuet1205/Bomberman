@@ -10,6 +10,7 @@ import static uet.oop.bomberman.entities.item.SpeedItem.speed;
 
 public class Move {
 
+    // goi ham di chuyen va giam so buoc 
     public static void checkRun(Animal animal) {
         if (animal instanceof Bomber && animal.getCount() > 0) {
             setDirection(animal.getDirection(), animal, 8 * speed);
@@ -21,27 +22,29 @@ public class Move {
         }
     }
 
+    // di chuyen
     public static void setDirection(String direction, Animal animal, int length){
         switch (direction) {
             case "down":
                 down_step(animal);
-                animal.setY(animal.getY() + length);
+                animal.setY(animal.getY() + length); // cap nhat lai vi tri animal
                 break;
             case "up":
                 up_step(animal);
-                animal.setY(animal.getY() - length);
+                animal.setY(animal.getY() - length);// cap nhat lai vi tri animal
                 break;
             case "left":
                 left_step(animal);
-                animal.setX(animal.getX() - length);
+                animal.setX(animal.getX() - length);// cap nhat lai vi tri animal
                 break;
             case "right":
                 right_step(animal);
-                animal.setX(animal.getX() + length);
+                animal.setX(animal.getX() + length);// cap nhat lai vi tri animal
                 break;
         }
     }
 
+    // di chuyen xuong duoi
     public static void down(Animal animal) {
         if (animal.getY() % 32 == 0 && animal.getX() % 32 == 0) {
             if (animal instanceof Bomber && Blocked.blockDown(animal)) {
@@ -62,6 +65,7 @@ public class Move {
         }
     }
 
+    // hoat canh di chuyen
     public static void down_step(Animal animal) {
         if (animal instanceof Bomber) {
             if (animal.getAnimation() == 0) {
@@ -110,6 +114,7 @@ public class Move {
         }
     }
 
+    // di chuyen xuong tren
     public static void up(Animal animal) {
         if (animal.getY() % 32 == 0 && animal.getX() % 32 == 0) {
             if (animal instanceof Bomber && Blocked.blockUp(animal)) {
@@ -130,6 +135,7 @@ public class Move {
         }
     }
 
+    // hoat canh di chuyen
     public static void up_step(Animal animal) {
         if (animal instanceof Bomber) {
             if (animal.getAnimation() == 0) {
@@ -178,6 +184,7 @@ public class Move {
         }
     }
 
+    // di chuyen xuong trai
     public static void left(Animal animal) {
         if (animal.getY() % 32 == 0 && animal.getX() % 32 == 0) {
             if (animal instanceof Bomber && Blocked.blockLeft(animal)) {
@@ -198,6 +205,7 @@ public class Move {
         }
     }
 
+    // hoat canh di chuyen
     public static void left_step(Animal animal) {
         if (animal instanceof Bomber) {
             if (animal.getAnimation() == 0) {
@@ -246,6 +254,7 @@ public class Move {
         }
     }
 
+    // di chuyen xuong phai
     public static void right(Animal animal) {
         if (animal.getY() % 32 == 0 && animal.getX() % 32 == 0) {
             if (animal instanceof Bomber && Blocked.blockRight(animal)) {
@@ -266,6 +275,7 @@ public class Move {
         }
     }
 
+    // hoat canh di chuyen
     public static void right_step(Animal animal) {
         if (animal instanceof Bomber) {
             if (animal.getAnimation() == 0) {

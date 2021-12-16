@@ -7,9 +7,10 @@ import static uet.oop.bomberman.BombermanGame.enemy;
 import static uet.oop.bomberman.BombermanGame.player;
 import static uet.oop.bomberman.entities.Move.*;
 
+// con nay tuong tu con ballom nhung co kha nang duoi theo nguoi choi
 public class Oneal extends Animal{
     public static int animationDead = 0;
-    public static int countKill = 0;
+//    public static int countKill = 0;
 
     public Oneal(int x, int y, Image img) {
         super(x, y, img);
@@ -40,26 +41,9 @@ public class Oneal extends Animal{
         }
     }
 
-    public void chasePlayer(){
-        if (this.y % 16 == 0 && this.x % 16 == 0){
-            if (player.getX() < this.x) {
-                left(this);
-            }
-            if (player.getX() > this.x) {
-                right(this);
-            }
-            if (player.getY() > this.y) {
-                down(this);
-            }
-            if (player.getY() < this.y) {
-                up(this);
-            }
-        }
-    }
-
     @Override
     public void update() {
-        countKill++;
+//        countKill++;
 
         for(Animal animal: enemy){
             if(!animal.isLiVe() && animal instanceof Oneal){
@@ -67,6 +51,7 @@ public class Oneal extends Animal{
             }
         }
 
+        // duoi theo nguoi choi
         if (this.y % 16 == 0 && this.x % 16 == 0){
             if (player.getX() < this.x) {
                 left(this);

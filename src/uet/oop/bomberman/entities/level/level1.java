@@ -18,37 +18,40 @@ import static uet.oop.bomberman.audio.Sound.*;
 
 public class level1 {
     public level1() {
-        enemy.clear();
-        block.clear();
-        animationDead = 1;
-        powerBomb = 0;
-        createMap("res/levels/Level1.txt");
-        player.setLive(true);
-        player.setX(32);
-        player.setY(32);
+        enemy.clear();// lam moi danh sach quai
+        block.clear();// lam moi danh sach khoi
+        animationDead = 1; // lam moi hoat canh chet cua nguoi choi
+        powerBomb = 0; // lam moi suc manh bomb
+        createMap("res/levels/Level1.txt"); // goi ham tao map
+        player.setLive(true); // lam moi
+        player.setX(32); // dat nguoi choi tai vi tri bat dau
+        player.setY(32); // dat nguoi choi tai vi tri bat dau
         isSoundDied = false;
         isSoundTitle = false;
-        timeNumber = 120;
-        bombNumber = 20;
-        isBomb = 0;
-        speed = 1;
+        timeNumber = 120; // thoi gian man choi
+        bombNumber = 20; // tong so bomb nguoi choi co
+        isBomb = 0; // lam moi
+        speed = 1; // toc do = 1
 
         player.setImg(Sprite.player_right_2.getFxImage());
         Image transparent = new Image("images/transparent.png");
         authorView.setImage(transparent);
 
+        // tao quai
         Animal enemy1 = new Ballom(4, 4, Sprite.ballom_left1.getFxImage());
         Animal enemy2 = new Ballom(9, 9, Sprite.ballom_left1.getFxImage());
         Animal enemy3 = new Ballom(22, 6, Sprite.ballom_left1.getFxImage());
+        Animal enemy4 = new Oneal(7, 6, Sprite.oneal_right1.getFxImage());
+        Animal enemy5 = new Oneal(13, 8, Sprite.oneal_right1.getFxImage());
+
+        // them quai vao danh sach
         enemy.add(enemy1);
         enemy.add(enemy2);
         enemy.add(enemy3);
-
-        Animal enemy4 = new Oneal(7, 6, Sprite.oneal_right1.getFxImage());
-        Animal enemy5 = new Oneal(13, 8, Sprite.oneal_right1.getFxImage());
         enemy.add(enemy4);
         enemy.add(enemy5);
 
+        // set su song cho lu quai
         for (Animal animal : enemy) {
             animal.setLive(true);
         }

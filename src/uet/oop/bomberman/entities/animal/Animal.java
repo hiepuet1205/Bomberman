@@ -5,16 +5,18 @@ import uet.oop.bomberman.entities.Entity;
 
 public abstract class Animal extends Entity {
     public int isMove;      //jump with pixel
-    public int animation;        //animation index
-    public String direction;    //direction of player
+    public int animation;        //hoat canh chuyen dong
+    public String direction;    //huong di chuyen
     public boolean live;       //true = còn sống
     public int count;       //count step of a jump
     public int countToRun;   //run after count frame
 
+    // khoi tao
     public Animal(int xUnit, int yUnit, Image img) {
         super(xUnit, yUnit, img);
     }
 
+    // khoi tao
     public Animal(int isMove, int animation, String direction, int count, int countToRun) {
         this.isMove = isMove;
         this.animation = animation;
@@ -23,12 +25,15 @@ public abstract class Animal extends Entity {
         this.countToRun = countToRun;
     }
 
+    // khoi tao
     public Animal(boolean live){
         this.live = live;
     }
 
+    // khoi tao
     public Animal(){}
 
+    // get / set
     public int getIsMove() {
         return isMove;
     }
